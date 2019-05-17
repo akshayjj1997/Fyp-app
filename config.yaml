@@ -1,0 +1,37 @@
+---
+id: fyp-app
+secret: some-secret
+modules:
+  crud:
+    mongo:
+      conn: mongodb://localhost:27017
+      isPrimary: true
+      collections:
+        users:
+          isRealtimeEnabled: false
+          rules:
+            create:
+              rule: allow
+            read:
+              rule: allow
+            update:
+              rule: allow
+            delete:
+              rule: allow
+        devices:
+          isRealtimeEnabled: true
+          rules:
+            create:
+              rule: allow
+            read:
+              rule: allow
+            update:
+              rule: allow
+            delete:
+              rule: allow
+  auth:
+    email:
+      enabled: true
+  realtime:
+    enabled: true
+    kafka: localhost
