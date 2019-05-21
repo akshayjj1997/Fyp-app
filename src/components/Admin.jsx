@@ -131,7 +131,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateDevice1: (ip_add, slave_add) => {
-      db.upsert("devices")
+      db.updateOne("devices")
         .where(cond('_id', '==', '1'))
         .set({ ip_add: ip_add, slave_add: slave_add }).apply()
         .then(res => {
@@ -145,7 +145,7 @@ const mapDispatchToProps = (dispatch) => {
         });
     },
     updateDevice2: (ip_add, slave_add) => {
-      db.upsert("devices")
+      db.updateOne("devices")
         .where(cond('_id', '==', '2'))
         .set({ ip_add: ip_add, slave_add: slave_add }).apply()
         .then(res => {

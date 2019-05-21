@@ -13,7 +13,7 @@ import User from './components/User';
 
 class App extends Component {
   render() {
-    // this.props.signup('user', 'user', '123', 'user');
+    //this.props.signup('admin', 'admin', '123', 'admin');
     return (
       <Router history={history}>
         <div>
@@ -26,41 +26,41 @@ class App extends Component {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     signup: (email, name, pass, role) => {
-//       db.signUp(email, name, pass, role).then(res => {
-//         if (res.status === 404) {
-//           notification['error']({ message: 'Signup failed', description: 'User already exists' })
-//           return
-//         }
-//         if (res.status === 401) {
-//           notification['error']({ message: 'Signup failed', description: 'Request was unauthenticated' })
-//           return
-//         }
-//         if (res.status === 403) {
-//           notification['error']({ message: 'Signup failed', description: 'Request was unauthorized' })
-//           return
-//         }
-//         if (res.status === 500) {
-//           notification['error']({ message: 'Signup failed', description: 'Internal server error' })
-//           return
-//         }
-//         if (res.status === 200) {
-//           console.log('here!')
-//           // Set the token id to enable operations of other modules
-//           api.setToken(res.data.token)
-//           dispatch(set('user', res.data.user))
-//           dispatch(set('token', res.data.token))
-//         }
-//       }).catch(ex => {
-//         // Exception occured while processing request
-//         notification['error']({ message: 'Signup failed', description: 'Something went wrong' })
-//       });
-//     }
-//   };
-// };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signup: (email, name, pass, role) => {
+      db.signUp(email, name, pass, role).then(res => {
+        if (res.status === 404) {
+          notification['error']({ message: 'Signup failed', description: 'User already exists' })
+          return
+        }
+        if (res.status === 401) {
+          notification['error']({ message: 'Signup failed', description: 'Request was unauthenticated' })
+          return
+        }
+        if (res.status === 403) {
+          notification['error']({ message: 'Signup failed', description: 'Request was unauthorized' })
+          return
+        }
+        if (res.status === 500) {
+          notification['error']({ message: 'Signup failed', description: 'Internal server error' })
+          return
+        }
+        if (res.status === 200) {
+          console.log('here!')
+          // Set the token id to enable operations of other modules
+          api.setToken(res.data.token)
+          dispatch(set('user', res.data.user))
+          dispatch(set('token', res.data.token))
+        }
+      }).catch(ex => {
+        // Exception occured while processing request
+        notification['error']({ message: 'Signup failed', description: 'Something went wrong' })
+      });
+    }
+  };
+};
 
-// export default connect(null, mapDispatchToProps)(App)
+export default connect(null, mapDispatchToProps)(App)
 
-export default App;
+//export default App;

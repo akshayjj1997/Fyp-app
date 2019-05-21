@@ -18,7 +18,7 @@ modules:
               rule: allow
             delete:
               rule: allow
-        devices:
+        default:
           isRealtimeEnabled: true
           rules:
             create:

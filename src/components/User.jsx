@@ -8,89 +8,89 @@ import { cond } from "space-api";
 
 import { Row, Col, Card, Button, Form, Icon, Input, notification } from 'antd';
 
-// const WrappedDevice1 = Form.create({ name: 'device1' })(
-//   class Device1 extends React.Component {
-//     handleSubmit = (e) => {
-//       e.preventDefault();
-//       this.props.form.validateFields((err, values) => {
-//         if (!err) {
-//           this.props.updateDevice(values.voltage1, values.current1);
-//         }
-//       });
-//     }
+const WrappedDevice1 = Form.create({ name: 'device1' })(
+  class Device1 extends React.Component {
+    handleSubmit = (e) => {
+      e.preventDefault();
+      this.props.form.validateFields((err, values) => {
+        if (!err) {
+          this.props.updateDevice(values.voltage1, values.current1);
+        }
+      });
+    }
 
-//     render() {
-//       const { getFieldDecorator } = this.props.form;
-//       return (
-//         <Form onSubmit={this.handleSubmit}>
-//           <Form.Item>
-//             {getFieldDecorator('voltage1', {
-//               rules: [{ required: true, message: 'Please input the Voltage value!' }],
-//               initialValue: this.props.info === undefined ? '' : this.props.info.voltage
-//             })(
-//               <Input prefix={<Icon type="edit" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Voltage" />
-//             )}
-//           </Form.Item>
-//           <Form.Item>
-//             {getFieldDecorator('current1', {
-//               rules: [{ required: true, message: 'Please input the Current value!' }],
-//               initialValue: this.props.info === undefined ? '' : this.props.info.current
-//             })(
-//               <Input prefix={<Icon type="edit" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Current" />
-//             )}
-//           </Form.Item>
-//           <Form.Item>
-//             <Button type="primary" htmlType="submit">
-//               Submit
-//             </Button>
-//           </Form.Item>
-//         </Form>
-//       );
-//     }
-//   }
-// );
+    render() {
+      const { getFieldDecorator } = this.props.form;
+      return (
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Item>
+            {getFieldDecorator('voltage1', {
+              rules: [{ required: true, message: 'Please input the Voltage value!' }],
+              initialValue: this.props.info === undefined ? '' : this.props.info.voltage
+            })(
+              <Input prefix={<Icon type="edit" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Voltage" />
+            )}
+          </Form.Item>
+          <Form.Item>
+            {getFieldDecorator('current1', {
+              rules: [{ required: true, message: 'Please input the Current value!' }],
+              initialValue: this.props.info === undefined ? '' : this.props.info.current
+            })(
+              <Input prefix={<Icon type="edit" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Current" />
+            )}
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
+      );
+    }
+  }
+);
 
-// const WrappedDevice2 = Form.create({ name: 'device2' })(
-//   class Device2 extends React.Component {
-//     handleSubmit = (e) => {
-//       e.preventDefault();
-//       this.props.form.validateFields((err, values) => {
-//         if (!err) {
-//           this.props.updateDevice(values.voltage2, values.current2);
-//         }
-//       });
-//     }
+const WrappedDevice2 = Form.create({ name: 'device2' })(
+  class Device2 extends React.Component {
+    handleSubmit = (e) => {
+      e.preventDefault();
+      this.props.form.validateFields((err, values) => {
+        if (!err) {
+          this.props.updateDevice(values.voltage2, values.current2);
+        }
+      });
+    }
 
-//     render() {
-//       const { getFieldDecorator } = this.props.form;
-//       return (
-//         <Form onSubmit={this.handleSubmit}>
-//           <Form.Item>
-//             {getFieldDecorator('voltage2', {
-//               rules: [{ required: true, message: 'Please input the Voltage value!' }],
-//               initialValue: this.props.info === undefined ? '' : this.props.info.voltage
-//             })(
-//               <Input prefix={<Icon type="edit" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Voltage" />
-//             )}
-//           </Form.Item>
-//           <Form.Item>
-//             {getFieldDecorator('current2', {
-//               rules: [{ required: true, message: 'Please input the Current value!' }],
-//               initialValue: this.props.info === undefined ? '' : this.props.info.current
-//             })(
-//               <Input prefix={<Icon type="edit" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Current" />
-//             )}
-//           </Form.Item>
-//           <Form.Item>
-//             <Button type="primary" htmlType="submit">
-//               Submit
-//             </Button>
-//           </Form.Item>
-//         </Form>
-//       );
-//     }
-//   }
-// );
+    render() {
+      const { getFieldDecorator } = this.props.form;
+      return (
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Item>
+            {getFieldDecorator('voltage2', {
+              rules: [{ required: true, message: 'Please input the Voltage value!' }],
+              initialValue: this.props.info === undefined ? '' : this.props.info.voltage
+            })(
+              <Input prefix={<Icon type="edit" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Voltage" />
+            )}
+          </Form.Item>
+          <Form.Item>
+            {getFieldDecorator('current2', {
+              rules: [{ required: true, message: 'Please input the Current value!' }],
+              initialValue: this.props.info === undefined ? '' : this.props.info.current
+            })(
+              <Input prefix={<Icon type="edit" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Current" />
+            )}
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
+      );
+    }
+  }
+);
 
 class User extends React.Component {
   constructor(props) {
@@ -163,6 +163,7 @@ let unsubscribe = null
 
 // Callback for data changes
 const onSnapshot = (drafts, type) => {
+  console.log('values:', drafts)
   store.dispatch(set("devices", drafts))
 }
 
@@ -179,36 +180,36 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // updateDevice1: (voltage, current) => {
-    //   db.updateOne("devices")
-    //     .where(cond('_id', '==', '1'))
-    //     .set({ voltage: voltage, current: current }).apply()
-    //     .then(res => {
-    //       if (res.status === 200) {
-    //         notification['success']({ message: 'Success!', description: 'Device 1 info updated' })
-    //         return;
-    //       }
-    //     }).catch(ex => {
-    //       // Exception occured while processing request
-    //       notification['error']({ message: 'Failed!', description: 'Something went wrong' })
-    //     });
-    // },
-    // updateDevice2: (voltage, current) => {
-    //   db.updateOne("devices")
-    //     .where(cond('_id', '==', '2'))
-    //     .set({ voltage: voltage, current: current }).apply()
-    //     .then(res => {
-    //       if (res.status === 200) {
-    //         notification['success']({ message: 'Success!', description: 'Device 2 info updated' })
-    //         return;
-    //       }
-    //     }).catch(ex => {
-    //       // Exception occured while processing request
-    //       notification['error']({ message: 'Failed!', description: 'Something went wrong' })
-    //     });
-    // },
+    updateDevice1: (voltage, current) => {
+      db.updateOne("values")
+        .where(cond('_id', '==', '1'))
+        .set({ voltage: voltage, current: current }).apply()
+        .then(res => {
+          if (res.status === 200) {
+            notification['success']({ message: 'Success!', description: 'Device 1 info updated' })
+            return;
+          }
+        }).catch(ex => {
+          // Exception occured while processing request
+          notification['error']({ message: 'Failed!', description: 'Something went wrong' })
+        });
+    },
+    updateDevice2: (voltage, current) => {
+      db.updateOne("values")
+        .where(cond('_id', '==', '2'))
+        .set({ voltage: voltage, current: current }).apply()
+        .then(res => {
+          if (res.status === 200) {
+            notification['success']({ message: 'Success!', description: 'Device 2 info updated' })
+            return;
+          }
+        }).catch(ex => {
+          // Exception occured while processing request
+          notification['error']({ message: 'Failed!', description: 'Something went wrong' })
+        });
+    },
     onMount: () => {
-      unsubscribe = db.liveQuery("devices").subscribe(onSnapshot, onError);
+      unsubscribe = db.liveQuery("values").subscribe(onSnapshot, onError);
     },
     onUnMount: () => {
       unsubscribe()
